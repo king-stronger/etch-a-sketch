@@ -11,37 +11,36 @@ function createGrid(number){
     const gap = parseInt(containerStyle.gap);
     const paddingLeft = parseInt(containerStyle.paddingLeft);
     const paddingRight = parseInt(containerStyle.paddingRight);
-
-    const divWidth = ((container.clientWidth - paddingLeft - paddingRight) / number) - gap;
+    const squareWidth = ((container.clientWidth - paddingLeft - paddingRight) / number) - gap;
 
     for(let i = 0; i < number * number; i++){
 
-        let div = createDiv(divWidth);
-        container.appendChild(div);
+        let square = createSquare(squareWidth);
+        container.appendChild(square);
     }
 
 
-    let divs = document.querySelectorAll(".container div");
+    let squares = document.querySelectorAll(".container div");
 
-    divs.forEach(div => {
-        div.addEventListener("mouseover", event => {
-            changeColor(div);
-            changeOpacity(div);
+    squares.forEach(square => {
+        square.addEventListener("mouseover", event => {
+            changeColor(square);
+            changeOpacity(square);
         });
 
-        div.addEventListener("mouseleave", event => {
-            div.style.backgroundColor = "white";
+        square.addEventListener("mouseleave", event => {
+            square.style.backgroundColor = "white";
         });
     })
 }
 
-function createDiv(width){
-    const div = document.createElement("div");
+function createSquare(width){
+    const square = document.createElement("div");
 
-    div.style.width = Math.floor(width) + "px";
-    div.style.aspectRatio = "1/1";
-    div.style.border = "1px solid #333";
-    return div;
+    square.style.width = Math.floor(width) + "px";
+    square.style.aspectRatio = "1/1";
+    square.style.border = "1px solid #333";
+    return square;
 }
 
 function changeOpacity(element){

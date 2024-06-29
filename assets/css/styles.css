@@ -12,6 +12,17 @@ body {
     min-height: 100dvh;
 }
 
+button {
+    border: none;
+    outline: none;
+    display: block;
+    color: white;
+    margin: 2em auto;
+    padding: 1em 2em;
+    border-radius: .5em;
+    background: crimson;
+}
+
 .container {
     display: flex;
     gap: 8px;
