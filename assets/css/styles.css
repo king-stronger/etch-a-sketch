@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100dvh;
+}
+
+.container {
+    display: flex;
+    gap: 8px;
+    padding: 1em;
+    flex-wrap: wrap;
+    border: 1px solid whitesmoke;
+}
